@@ -101,7 +101,7 @@ while True:
                 nome_contato = dict_editora[i].getNomeContato()
                 print(f"editora: {codigo_editora}, razão social: {razao_social}, nome do contato: {nome_contato}, telefone: {telefone}")
 
-            editora_escolhida = input("digite o codigo")
+            editora_escolhida = input("digite o codigo: ")
                 
             if int(editora_escolhida) in dict_editora:
                 codigo_livro = int(input("digite o código do livro: "))
@@ -111,3 +111,27 @@ while True:
                 dict_livro[codigo_livro] = var_livro
             else:
                     print("editora não encontrada")
+        
+        case "3":
+            editora_pesquisada = input("digite a razão social da editora que deseja pesquisar: ")
+            for codigo, editora in dict_editora.items():
+                if editora.getRazaoSocial() == editora_pesquisada:
+                    print(f"editora encontrada: {codigo}, razão social: {editora.getRazaoSocial()}, nome do contato: {editora.getNomeContato()}, telefone: {editora.getTelefone()}")
+                    break
+            else:
+                print("editora não encontrada")
+        
+        case "4":
+            livro_pesquisado = input("digite o título do livro que deseja pesquisar: ")
+            for codigo, livro in dict_livro.items():
+                if livro.getTituloLivro() == livro_pesquisado:
+                    print(f"livro encontrado: {codigo}, título: {livro.getTituloLivro()}, ISBN: {livro.getIsbn()}, editora: {livro.getEditora()}")
+                    break
+            else:
+                print("livro não encontrado")   
+
+        case "5":
+            print("saindo...")
+            break
+
+print("Programa encerrado.")

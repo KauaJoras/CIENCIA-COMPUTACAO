@@ -33,12 +33,3 @@ for i in range(3):
     sexo = input("Digite o sexo da pessoa: ")
     pessoa = Pessoa(nome, idade, endereco, sexo)
     usuarios.append(pessoa)
-
-
-
-print (p1.getNome())
-print (p1.getIdade())
-p1.setIdade(20)
-print (p1.getIdade())
-print (p2.getEndereco())
-print (p3.getSexo())
